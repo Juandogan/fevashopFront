@@ -1,0 +1,121 @@
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__left">
+                        <ul>
+
+                            <ng-container *ngIf="user_ls == undefined">
+                                <li><i class="fa fa-envelope"></i>Sin loguear</li>
+                            </ng-container>
+
+                            <ng-container *ngIf="user_ls">
+                                <li><i class="fa fa-envelope"></i>{{user_ls.email}}</li>
+                            </ng-container>
+                         
+                            <li>Free Shipping for all Order of $99</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__right">
+                        <div class="header__top__right__social" style="font-size: 15px; color:gray">
+                            <i class="fab fa-facebook" style="margin-right: 11px; font-size: 18px;" ></i>
+                            <i class="fab fa-instagram" style="margin-right: 10px;font-size: 18px;"></i>
+                            <i class="fab fa-twitter" style="margin-right: 10px;font-size: 18px;"></i>
+                            
+                        </div>
+                        <!-- <div class="header__top__right__language">
+                            <img src="img/language.png" alt="">
+                            <div>English</div>
+                            <span class="arrow_carrot-down"></span>
+                            <ul>
+                                <li><a href="#">Spanis</a></li>
+                                <li><a href="#">English</a></li>
+                            </ul>
+                        </div> -->
+                        
+                        <div class="header__top__right__auth">
+                            <ng-container *ngIf="user_ls == undefined">
+                                <a routerLink="login"><i class="fa fa-user" style="font-size: 18px;"></i> Login</a>
+                            </ng-container>
+                            <ng-container *ngIf="user_ls">
+                                
+
+
+                                <div class="header__top__right__language">
+                                    <img src="img/language.png" alt="">
+                                      <i class="fa fa-user" style="margin-right: 5px; "></i>{{user_ls.nombres}}
+                                    <span class="arrow_carrot-down"></span>
+                                    <ul style="margin-top: 10px;">
+                                        <li><a routerLink="perfil">Mi perfil </a></li>
+                                        <li><a (click)="cerrarSesion()">Cerrar sesion </a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </ng-container>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header__logo">
+                    <img src="../../../assets/icono.jpg" alt="" width="40px"  style="margin-top: -12px;">
+                    <a routerLink="/"><span style="color:rgb(0, 201, 191); font-weight: 800; font-size: 30px;margin-left:5px; ">FEVA<span style="color:rgb(190, 190, 64)">SHOP</span></span></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="header__menu">
+                    <ul>
+                        <li class="active"><a routerLink="/" >Inicio</a></li>
+                        <li><a href="./shop-grid.html">Tienda</a></li>
+                        <!-- <li><a href="#">Ofertas</a>
+                            <ul class="header__menu__dropdown">
+                                <li><a href="./shop-details.html">Shop Details</a></li>
+                                <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                                <li><a href="./checkout.html">Check Out</a></li>
+                                <li><a href="./blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li> -->
+                        <li><a href="./blog.html">Blog</a></li>
+                        <li><a href="./contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__cart carrito" >
+                    <ul>
+                        <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
+                        <li><a routerLink="carrito"><i class="fa fa-shopping-bag " style="font-size: 24px;"></i> <span class="carrito" style="font-size: 11px;">{{this.item}}</span></a></li>
+                    </ul>
+                    <!-- <div class="header__cart__price"><b> Mi cesta</b></div> -->
+                </div>
+                
+            </div>
+        </div>
+
+   
+        
+        <div class="humberger__open" style="border: none; opacity: 0.9;">
+            <i routerLink="carrito" class="fa fa-shopping-bag " style="font-size: 24px;"></i>
+            <span style="font-size: 11px; margin-left: -4px; color:white"  class="position-absolute top-0  start-100 translate-middle badge rounded-pill bg-danger" >{{this.item}}</span>
+            <i class="fas fa-user" style="font-size: 22px;     position: absolute;
+            right: 40px;
+            top:5px;"> </i>
+
+<!-- <span style="    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 15px;
+font-weight: 600;
+margin-left: 6px;">Login</span> -->
+            
+        </div>
+    </div>
+    
+</header>

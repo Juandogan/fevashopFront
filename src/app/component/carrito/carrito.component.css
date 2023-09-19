@@ -1,0 +1,25 @@
+
+.shoping__checkout {
+
+    margin-top: -15px;
+}
+
+.shoping__cart__table table tbody tr td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+
+
+
+.shoping__checkout ul li {padding-bottom: 4px; padding-top: 3px;}
+
+
+.shoping__cart__table table thead th {
+    
+    font-size: 15px!important;
+    font-weight: 700;
+    color: #1c1c1c;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,52 @@
+
+.hero__categories ul {
+    padding-left: 10px;
+}
+
+
+.hero__categories__all {
+    padding: 10px 23px 10px 17px;
+}
+
+.poner991{
+    display:none
+}
+swiper {
+    height: 300px;
+    width: 100%;
+  }
+
+@media (max-width: 991px)  {
+    .quitar991{
+        display: none;
+      
+    }
+    .poner991{display: block;}
+  }
+
+
+  @media (max-width: 767px)  {
+    .hero__item{height: 280px}
+    .margenAcomoda{
+        margin-left: -50px!important;
+      
+    }
+    
+    
+    .acomodaTOP{
+        align-items: flex-start!important;
+        display:block
+    }
+    .tituloPortal{
+        font-size: 27px;
+        line-height: 31px;
+    }
+    }
+@media (max-width: 991px)  {
+    .margenAcomoda{
+        margin-left: -40px;
+      
+    }
+}
+
+

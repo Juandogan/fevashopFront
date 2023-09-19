@@ -1,0 +1,231 @@
+
+<body >
+    <!-- Page Preloder -->
+    <!-- <div id="preloder">
+        <div class="loader"></div>
+    </div> -->
+
+    <!-- Shoping Cart Section Begin -->
+    <section class="shoping-cart spad" style="margin-top: -80px;">
+        <div style="background-image: url('../../../assets/equipo.jpg');  text-align: center;" >
+            <h1 style="color: aliceblue;"><b> CheckOut </b></h1>
+        </div>
+        <div class="container" style="margin-top: -28px; ">
+           
+            
+            
+            <!-- <img src="../../../assets/image6.png" alt="" width="100%" style="opacity: 0.7;"> -->
+
+
+            
+
+            <br><br>
+            
+
+            <div class="row" >
+                <div class="col-lg-7">
+                    <br>
+                    <h4 style="color: rgb(0, 161, 161);"> 
+                        <i class="fas fa-shopping-cart" style="cohrlor: rgb(122, 88, 25);"></i>
+                        <b style="margin-left: 10px;">
+                        Detalles de la orden</b></h4>
+                        <hr>
+
+                    
+                    <div class="shoping__cart__table">
+                        <table>
+                            <thead>
+                                <tr class="font-size:17px">
+                                    <th>Descripcion</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of carrito"> 
+                                    <td class="shoping__cart__item">
+                                        <img src="img/cart/cart-1.jpg" alt="">
+                                        <h5>{{item.producto.titulo}}</h5>
+                                    </td>
+                                    <td class="shoping__cart__price">
+                                        {{item.producto.precio}}
+                                    </td>
+                                    <td class="shoping__cart__quantity">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="text" name="cantidad_input" [(ngModel)]="cantidad">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="shoping__cart__total">
+                                        
+                                    </td>
+                                    <td class="shoping__cart__item__close">
+                                        <span class="icon_close" (click)="eliminar(item._id)"></span>
+                                    </td>
+                                </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-1">
+
+                </div>
+                
+                <div class="col-lg-4">
+                    <br>
+                    <div class="shoping__checkout">
+                        <h5>Orden Total</h5>
+                        <hr>
+                        <ul>
+                            <li>Subtotal <span>${{this.subtotal}}</span></li>
+                            <li>Envio <span>${{this.precioEnvio}}</span></li>
+                            <li>Total <span>${{this.total}}</span></li>
+                        </ul>
+                        <a  class="primary-btn" (click)="enviarMercadopago()">
+                            
+                            <div *ngIf="loading" > Realizar pago
+                             
+
+
+                            </div>
+                            <span *ngIf="!loading" class="spinner-border spinner-border-sm" role="status">
+                                <span class="visually-hidden"></span>
+                            </span>
+                        
+                        </a>
+                   
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" style="margin-top: 0px;">
+                    <h4>
+                        <i class="fas fa-mail-bulk" style="color:rgb(0, 161, 161) ;"></i>
+                        <b style="color: rgb(0, 161, 161);margin-left: 10px;" >
+                        
+                        Dirección de Envío</b></h4>
+                        <hr>
+                    
+                    
+                    <h5 style="margin-bottom: 5px;">Nombre destinatario: <span><b> {{this.direccionEnvio?.destinatario}}</b></span></h5>
+                    <h5 style="margin-bottom: 5px;">DNI: <span><b> {{this.direccionEnvio?.dni}}</b></span></h5>
+                    <h5 style="margin-bottom: 5px;">Dirección envío: <span><b> {{this.direccionEnvio?.direccion}}</b></span></h5>
+                    <h5 style="margin-bottom: 5px;">Codigo Postal: <span><b> {{this.direccionEnvio?.zip}}</b></span></h5>
+                    <h5 style="margin-bottom: 5px;">Pais: <span><b> {{this.direccionEnvio?.pais}}</b></span></h5>
+                    <h5 style="margin-bottom: 5px;">Provincia: <span><b> {{this.direccionEnvio?.provincia}}</b></span></h5>
+                    <h5 style="margin-bottom: 5px;">Municipio: <span><b> {{this.direccionEnvio?.municipio}}</b></span></h5>
+                    <h5 style="margin-bottom: 5px;">Telefono: <span><b> {{this.direccionEnvio?.telefono}}</b></span></h5>
+<br>
+<br><br>
+                    <h4><b style="color: rgb(0, 161, 161);">
+                        <i class="fas fa-truck"></i>
+                        Métodos de envío</b></h4>
+                        <hr>
+<img src="../../../assets/correo.png" alt="" width="170px">
+                        
+                    <p>Envio express</p>
+
+                    <br>
+
+                    <h4><b style="color: rgb(0, 161, 161);">4. Opciones de pago</b></h4>
+                    <br>
+                    <!-- <div class="shoping__cart__btns">
+                        <a href="#" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
+                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
+                            Upadate Cart</a>
+                    </div> -->
+                    
+                </div>
+                <div class="col-lg-6">
+                
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Shoping Cart Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: 60-49 Road 11378 New York</li>
+                            <li>Phone: +65 11.188.888</li>
+                            <li>Email: hello@colorlib.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">About Our Shop</a></li>
+                            <li><a href="#">Secure Shopping</a></li>
+                            <li><a href="#">Delivery infomation</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Our Sitemap</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Who We Are</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Innovation</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>

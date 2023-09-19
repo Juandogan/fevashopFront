@@ -1,0 +1,108 @@
+<section class="hero">
+    <div class="container">
+<div class="checkout__form" *ngIf="user_lc">
+    
+    <form #actualizarForm="ngForm" (ngSubmit)="actualizar(actualizarForm)" >
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="checkout__order">
+                    <h4>{{user_lc.nombres}} <span><h6 style="margin-top: 5px; font-size: 14px; opacity: 0.6;">{{user_lc.email}}</h6></span></h4>
+                    
+                    <div class="checkout__order__products">Mi perfil</div>            
+                    <div class="checkout__order__products">Mis compras</div>
+                    <div class="checkout__order__products">Favoritos</div>
+                    <div class="checkout__order__products">cerrar sesion</div>
+                    <div class="checkout__input__checkbox">
+                     
+                    </div>
+      
+                   
+                    <!-- <button type="submit" class="site-btn">PLACE ORDER</button> -->
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-6">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Nombre<span>*</span></p>
+                            <input type="text" name="nombres" [(ngModel)]="cliente.nombres">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Apellido<span>*</span></p>
+                            <input type="text" name="apellidos" [(ngModel)]="cliente.apellidos">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">           
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Email<span>*</span></p>
+                            <input type="text" readonly name="email" [(ngModel)]="cliente.email">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Nueva Contraseña<span>*</span></p>
+                            <input type="password" name="password" [ngModel]="password" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Telefono<span>*</span></p>
+                            <input type="text" name="telefono" [(ngModel)]="cliente.telefono">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Fecha de nacimiento<span>*</span></p>
+                            <input class="form-control" type="date" name="f_nacimiento" [(ngModel)]="cliente.f_nacimiento">
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>DNI<span>*</span></p>
+                            <input type="text" name="dni" [(ngModel)]="cliente.dni">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Genero<span>*</span></p>
+                            <select  class="form-control" type="text" name="genero" [(ngModel)]="cliente.genero">
+                                <option value="Femenino">Femenino</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Pais<span>*</span></p>
+                            <select  class="form-control" type="text" name="pais" [(ngModel)]="cliente.pais">
+                                <option value="" selected disabled>Seleccione</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Uruguay">Uruguay</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+             
+
+
+                <button type="submit" class="btn btn-danger">Actualizar</button>
+            </div>           
+           
+        </div>
+        
+    </form>
+</div>
+</div>
+</section>

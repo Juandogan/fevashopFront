@@ -1,0 +1,361 @@
+<div *ngIf="loading" id="preloder" style="background-color: aliceblue;">
+    <div class="loader"></div>
+</div>
+<section class="hero">
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-9" style="margin: 0px!important; padding: 0px!important;">
+                <!-- <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                <div class="hero__search__categories">
+                                    All Categories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="What do yo u need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+65 11.188.888</h5>
+                                <span>support 24/7 time</span>
+                            </div>
+                        </div>
+                    </div>  -->
+                <div class="demo">
+
+
+
+                    <!-- <carousel [images]="imagesForSlider" [objectFit]="'cover'" [cellWidth]="'100%'" [height]="410"
+                        [autoplay]="true" [dots]="true" [loop]="true">
+                    </carousel> -->
+
+                </div>
+                <br>
+
+                <div class="hero__item set-bg" style="background-image: url('../../../assets/FESTEJO\ 5.jpg'); background-size: 100%; object-fit: cover; margin-top: -24px; ;" > 
+                
+                <div class="hero__text">
+                    <span class="margenAcomoda acomodaTOP">TIENDA</span>
+                    <h2 style="color:white" class="margenAcomoda tituloPortal">Tienda Virtual <br />FevaSHOP</h2>
+                    <p style="color: yellow;"class="margenAcomoda">Envios a todo el pais</p>
+                    <a href="#" class="primary-btn margenAcomoda">Registrarse</a>
+                </div>
+                
+                </div>
+            </div>
+            <div class="col-lg-3 quitar991">
+                <div class="hero__categories">
+                    <div class="hero__categories__all" style="background-color: rgb(13, 122, 122);">
+
+                        <span>Categorìas</span>
+                    </div>
+                    <ul>
+                        <div *ngFor="let item of config_global.categorias">
+
+                            <li>
+                                <h4 class="hero__categories"
+                                    style="margin-top:4px; font-size: 17px; letter-spacing: 1px; padding:5px; font-weight: 500; cursor: pointer;">
+                                    <i class="{{item.icono}}" style="opacity: 0.6;"></i><span
+                                        style="margin-left: 8px;">{{item.titulo}}</span></h4>
+                            </li>
+
+                        </div>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="quitar991">
+        <h2 style="margin-top: 30px!important;" ><b style="font-size: 28px; color: rgb(14, 171, 182);" > Camisetas Seleccion</b></h2>
+        <!-- <img src="../../../assets/image 21.png" alt="" style="opacity: 0.9; margin-top: 20px;" class="quitar991"> -->
+<hr>
+</div>
+        <!-- mobile -->
+        <div class="poner991" style="text-align: center; ">
+            <img src="../../../assets/image 8.png" alt="" style="opacity: 0.9; margin-top: 20px;">
+            <h4 style="margin-top: -24px;
+                position: absolute;color:gray; margin-left: 10px;"><b>Indumentaria</b></h4>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Hero Section End -->
+
+<!-- Categories Section Begin -->
+<section *ngIf="this.productos" class="categories">
+    <div class="container">
+        <div style="text-align: left;margin-top: -20px;">
+            <!-- <h2 style="color: rgb(10, 163, 163);font-size: 20px;">Camisetas Oficiales</h2> -->
+        </div>
+        <div class="section section--demo" id="examples">
+
+
+
+            <!-- Image slider -->
+
+            <div class="demo">
+
+                <!-- <carousel [height]="250" [margin]="30" [loop]="true" [autoplay]="true"> -->
+
+                    <carousel [height]="300" [margin]="30" [loop]="true" [autoplay]="true">
+
+                    <ng-container *ngFor="let item of productos">
+
+                        <div class="carousel-cell" style="text-align: center;">
+                            <a href="" routerLink="detalleProducto/{{item._id}}">
+                                <p *ngIf="item.stock == 0" class="badge badge-danger"
+                                    style="position: absolute;right:10px;top:10px; z-index: 22222222;">Sin stock</p>
+                                <p *ngIf="item.titulo =='Camiseta Titular Masculina 2022'" class="badge badge-warning"
+                                    style="position: absolute;right:20px;top:4px; z-index: 22222222;">Nueva!</p>
+                                <img src="{{item.portada}}" style="height: 70%;">
+                            </a>
+                            <div style="width:100%;">
+                                <p style="margin-top: 4px; line-height: 20px;"><b>{{item.titulo}}</b></p>
+                                <p
+                                    style="margin-top: -10px; color:rgb(0, 105, 105);font-size: 13px;                                    
+                                        font-size: 16px;font-family: 'Cairo', sans-serif; color: #6f6f6f; font-weight: 400;">
+                                    <i class="fa fa-tags" style="color: rgb(0, 194, 201);">
+                                        <span
+                                            style="margin-top: -10px; color:rgb(0, 105, 105);font-size: 13px;                                        
+                                        font-size: 16px;font-family: 'Cairo', sans-serif;color: #6f6f6f;font-weight: 400;">
+                                            <b style="color: rgb(95, 95, 95);"> {{item.precio}}</b></span></i> ARS
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </ng-container>
+
+
+
+                </carousel>
+                <br>
+                <br>
+                <br>
+                <!-- <hr style="margin-left: 30%;margin-right: 30%;margin-top: 40px; color:aqua"> -->
+
+                <div class="row"
+                    style="background: rgb(92,117,115); border-radius: 8px">
+
+                    <div class="col-2">
+                        
+                    </div>
+                    <div class="col-4">
+                        <img src="../../../assets/FESTEJO_4-removebg-preview.png" style="width: 1700px;    max-width: 143%!important;" alt="" >
+                    </div>
+                    <div  class="col-6" style="margin-top: 40px;" >
+                        <div class="hero__text">
+                            <span >PROMOCION</span>
+                            <h2 style="color:white">Envios sin cargo <br />a todo el pais</h2>
+                            <p style="color: yellow;">Free Pickup and Delivery Available</p>
+                            <a href="#" class="primary-btn">SHOP NOW</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Banner Begin -->
+                <div class="banner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <br>
+                                <div class="section-title from-blog__title">
+                                    <h2>Lecop Sportif</h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="banner__pic">
+                                    <!-- <img src="img/banner/banner-1.jpg" alt=""> -->
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="banner__pic">
+                                    <!-- <img src="img/banner/banner-2.jpg" alt=""> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Banner End -->
+
+                <!-- Latest Product Section Begin -->
+                <section class="latest-product spad">
+                    <div class="container" style="margin-top: -80px;">
+                        <div class="row" style="text-align: center;">
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="latest-product__text">
+                                    <h4>Ultimos productos</h4>
+                                    <img src="../../../assets/CAMISETA SUPLENTE MASCULINA 2022 (1).jpg" alt="">
+                              
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="latest-product__text">
+
+                                    <h4>Top Rated Products</h4>
+                                    <img src="../../../assets/CAMISETA SUPLENTE MASCULINA 2022 (1).jpg" alt="">
+
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="latest-product__text">
+                                    <h4>Productos Ofertas</h4>
+                                    <img src="../../../assets/CAMISETA SUPLENTE MASCULINA 2022 (1).jpg" alt="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Latest Product Section End -->
+
+                <!-- Blog Section Begin -->
+                <section class="from-blog spad">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-title from-blog__title">
+                                    <h2>From The Blog</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="blog__item">
+                                    <div class="blog__item__pic">
+                                        <img src="../../../assets/equipo.jpg" alt="">
+                                    </div>
+                                    <div class="blog__item__text">
+                                        <ul>
+                                            <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                            <li><i class="fa fa-comment-o"></i> 5</li>
+                                        </ul>
+                                        <h5><a href="#">Cooking tips make cooking simple</a></h5>
+                                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
+                                            quaerat </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="blog__item">
+                                    <div class="blog__item__pic">
+                                        <img src="../../../assets/grupal.jpg" alt="">
+                                    </div>
+                                    <div class="blog__item__text">
+                                        <ul>
+                                            <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                            <li><i class="fa fa-comment-o"></i> 5</li>
+                                        </ul>
+                                        <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
+                                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
+                                            quaerat </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="blog__item">
+                                    <div class="blog__item__pic">
+                                        <img src="../../../assets/image.png" alt="">
+                                    </div>
+                                    <div class="blog__item__text">
+                                        <ul>
+                                            <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                            <li><i class="fa fa-comment-o"></i> 5</li>
+                                        </ul>
+                                        <h5><a href="#">Visit the clean farm in the US</a></h5>
+                                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam
+                                            quaerat </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Blog Section End -->
+
+                <!-- Footer Section Begin -->
+                <footer class="footer spad">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="footer__about">
+                                    <div class="footer__about__logo">
+                                        <a href="./index.html"><img src="" alt=""></a>
+                                    </div>
+                                    <ul>
+                                        <li>Address: 60-49 Road 11378 New York</li>
+                                        <li>Phone: +65 11.188.888</li>
+                                        <li>Email: hello@colorlib.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                                <div class="footer__widget">
+                                    <h6>Useful Links</h6>
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">About Our Shop</a></li>
+                                        <li><a href="#">Secure Shopping</a></li>
+                                        <li><a href="#">Delivery infomation</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Our Sitemap</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="#">Who We Are</a></li>
+                                        <li><a href="#">Our Services</a></li>
+                                        <li><a href="#">Projects</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="#">Innovation</a></li>
+                                        <li><a href="#">Testimonials</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="footer__widget">
+                                    <h6>Join Our Newsletter Now</h6>
+                                    <p>Get E-mail updates about our latest shop and special offers.</p>
+                                    <form action="#">
+                                        <input type="text" placeholder="Enter your mail">
+                                        <button type="submit" class="site-btn">Subscribe</button>
+                                    </form>
+                                    <div class="footer__widget__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="footer__copyright">
+                                    <div class="footer__copyright__text">
+                                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                            Copyright &copy;
+                                            <script>document.write(new Date().getFullYear());</script> All rights
+                                            reserved | This template is made with <i class="fa fa-heart"
+                                                aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                                target="_blank">Colorlib</a>
+                                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                        </p>
+                                    </div>
+                                    <div class="footer__copyright__payment"><img src="" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- Footer Section End -->
+
+                <!-- Js Plugins -->

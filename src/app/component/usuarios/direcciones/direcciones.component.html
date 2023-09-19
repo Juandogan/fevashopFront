@@ -1,0 +1,129 @@
+<section class="hero">
+    <div class="container">
+<div class="checkout__form" *ngIf="user_lc">
+    
+    <form #registroForm="ngForm" (ngSubmit)="registrar(registroForm)" >
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="checkout__order">
+                    <h4>{{user_lc.nombres}} <span><h6 style="margin-top: 5px; font-size: 14px; opacity: 0.6;">{{user_lc.email}}</h6></span></h4>
+                    
+                    <div class="checkout__order__products">Mi perfil</div>            
+                    <div class="checkout__order__products">Mis compras</div>
+                    <div class="checkout__order__products">Favoritos</div>
+                    <div class="checkout__order__products">cerrar sesion</div>
+                    <div class="checkout__input__checkbox">
+                     
+                    </div>
+      
+                   
+                    <!-- <button type="submit" class="site-btn">PLACE ORDER</button> -->
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-6">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Nombre del destinatario<span>*</span></p>
+                            <input type="text" name="destinatario" [(ngModel)]="direccion.destinatario" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>DNI<span>*</span></p>
+                            <input type="text" name="dni" [(ngModel)]="direccion.dni" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">           
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Direccion<span>*</span></p>
+                            <input type="text" name="direccion" [(ngModel)]="direccion.direccion">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Telefono<span>*</span></p>
+                            <input type="text" name="telefono" [(ngModel)]="direccion.telefono">
+                        </div>
+                    </div>
+                </div>
+     
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Pais<span>*</span></p>
+                            <select  class="form-control" type="text" name="direccion.pais" [(ngModel)]="direccion.pais">                                
+                                <option value="Argentina">Argentina</option>
+                                
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Provincia<span>*</span></p>
+                            <select  class="form-control" type="text" name="direccion.provincia" [(ngModel)]="direccion.provincia" >
+
+                                <option value="" selected disabled>Seleccione</option>
+                                <option value="1">BUENOS AIRES</option>
+                                <option value="2">CATAMARCA</option>
+                                <option value="5">CHACO</option>
+                                <option value="6">CHUBUT</option>
+                                <option value="50">CIUDAD AUTONOMA DE Bs As</option>
+                                <option value="3">CORDOBA</option>
+                                <option value="4">CORRIENTES</option>
+                                <option value="7">ENTRE RIOS</option>
+                                <option value="8">FORMOSA</option>
+                                <option value="9">JUJUY</option>
+                                <option value="10">LA PAMPA</option>
+                                <option value="11">LA RIOJA</option>
+                                <option value="12">MENDOZA</option>
+                                <option value="13">MISIONES</option>
+                                <option value="14">NEUQUEN</option>
+                                <option value="15">RIO NEGRO</option>
+                                <option value="16">SALTA</option>
+                                <option value="17">SAN LUIS</option>
+                                <option value="19">SANTA CRUZ</option>
+                                <option value="20">SANTA FE</option>
+                                <option value="21">SANTIAGO DEL ESTERO</option>
+                                <option value="22">TIERRA DEL FUEGO</option>
+                                <option disabled="true" selected="true" value="">Seleccionar una Provincia</option>
+                            
+                            
+                            
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Municipio<span>*</span></p>
+                            <input  class="form-control" type="text" name="pais" [(ngModel)]="direccion.municipio" >
+                                
+                                
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Localidad<span>*</span></p>
+                            <input  class="form-control" type="text" name="pais" [(ngModel)]="direccion.region" >
+                                                              
+                                                    </div>
+                    </div>
+                </div>
+             
+
+
+                <button type="submit" class="btn btn-danger" >Actualizar</button>
+            </div>           
+           
+        </div>
+        
+    </form>
+</div>
+</div>
+</section>
